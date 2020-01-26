@@ -1,0 +1,27 @@
+{
+  "name": "sockman",
+  "version": "1.0.0",
+  "description": "A simple socket management library for express and JS",
+  "main": "lib/server/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "tsc"
+  },
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "ws"
+  ],
+  "author": "G. Hemingway",
+  "license": "ISC",
+  "dependencies": {
+    "ws": "^7.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.2",
+    "@types/ws": "^7.2.0",
+    "typescript": "^3.7.5"
+  }
+}
