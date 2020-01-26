@@ -1,9 +1,10 @@
 {
   "name": "sockman",
   "version": "1.0.0",
-  "description": "A simple socket management library for express and JS",
+  "description": "A simple socket management library for express and JS - with TS support",
   "main": "lib/server/index.js",
   "typings": "lib/index.d.ts",
+  "repository": "https://github.com/ghemingway/sockman",
   "scripts": {
     "prepare": "npm run build",
     "build": "tsc"
