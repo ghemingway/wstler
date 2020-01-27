@@ -1,8 +1,6 @@
 /* Copyright @author: G. Hemingway @2020 - All rights reserved */
 "use strict";
 
-import WebSocket from "ws";
-
 type IEventHandler = (msg?: any) => void;
 
 /* Class to handle details of each client on the server side */
@@ -19,18 +17,20 @@ export class Socket {
   public onReconnect: IEventHandler;
   // Actual instance values
   private readonly _host: string;
+  private readonly _secure: boolean;
   private readonly _logger: IEventHandler;
   private _tries: number;
   private _ws: WebSocket;
   private _connected: boolean;
   private readonly _channels: Set<string>;
 
-  constructor(host: string, debug = false) {
+  constructor(host: string, secure: boolean, debug = false) {
     this._tries = 0;
     this._host = host;
+    this._secure = secure;
     this._connected = false;
     this._channels = new Set();
-    this._ws = new WebSocket(`ws://${this._host}`);
+    this._ws = new WebSocket(`${secure ? "wss" : "ws"}://${this._host}`);
     this.socketOpen();
     // tslint:disable-next-line: no-empty
     this._logger = debug ? console.log : () => {};
@@ -183,7 +183,9 @@ export class Socket {
         : Socket.longPollInterval;
     this._logger(`SocketManager: retry in ${retryInterval}ms`);
     setTimeout(() => {
-      this._ws = new WebSocket(`ws://${this._host}`);
+      this._ws = new WebSocket(
+        `${this._secure ? "wss" : "ws"}://${this._host}`
+      );
       this.socketOpen();
     }, retryInterval);
   }
