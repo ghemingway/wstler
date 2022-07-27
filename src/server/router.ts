@@ -1,8 +1,8 @@
-/* Copyright @author: G. Hemingway @2020 - All rights reserved */
+/* Copyright @author: G. Hemingway @2022 - All rights reserved */
 "use strict";
 
-import { Client } from "./client";
-import { IHandler, Manager } from "./index";
+import { Client } from "./client.js";
+import { IHandler, Manager } from "./index.js";
 
 export class Router {
   private readonly _handlers: Map<string, IHandler>;

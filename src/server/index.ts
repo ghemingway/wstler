@@ -1,11 +1,11 @@
-/* Copyright @author: G. Hemingway @2020 - All rights reserved */
+/* Copyright @author: G. Hemingway @2022 - All rights reserved */
 "use strict";
 
 import express from "express";
 import http from "http";
-import WebSocket from "ws";
-import { Client } from "./client";
-import { Router } from "./router";
+import WebSocket, { WebSocketServer } from 'ws';
+import { Client } from "./client.js";
+import { Router } from "./router.js";
 
 interface IMsg {
   type: string;
@@ -53,7 +53,7 @@ export class Manager {
     // Init set of clients
     this._clients = new Set();
     // Establish the underlying Websocket server
-    this._wss = new WebSocket.Server({
+    this._wss = new WebSocketServer({
       clientTracking: false,
       server,
       verifyClient: verifyFunc

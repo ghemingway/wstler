@@ -1,4 +1,4 @@
-/* Copyright @author: G. Hemingway @2020 - All rights reserved */
+/* Copyright @author: G. Hemingway @2022 - All rights reserved */
 "use strict";
 
 import WebSocket from "ws";

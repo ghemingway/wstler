@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
     "target": "ES2019",
-    "module": "commonjs",
+    "module": "nodenext",
     "declaration": true,
     "outDir": "lib",
     "strict": true,
     "removeComments": true,
     "esModuleInterop": true
   },
-  "include": ["src/client", "src/server"]
+  "include": ["src"]
 }
