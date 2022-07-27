@@ -9,12 +9,13 @@ export declare class Socket {
     onMessage: IEventHandler;
     onReconnect: IEventHandler;
     private readonly _host;
+    private readonly _secure;
     private readonly _logger;
     private _tries;
     private _ws;
     private _connected;
     private readonly _channels;
-    constructor(host: string, debug?: boolean);
+    constructor(host: string, secure: boolean, debug?: boolean);
     addChannel(name: string): boolean;
     removeChannel(name: string): boolean;
     clearChannels(): boolean;

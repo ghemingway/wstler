@@ -1,5 +1,5 @@
-import { Client } from "./client";
-import { IHandler, Manager } from "./index";
+import { Client } from "./client.js";
+import { IHandler, Manager } from "./index.js";
 export declare class Router {
     private readonly _handlers;
     private readonly _chanHanlders;

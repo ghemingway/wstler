@@ -1,8 +1,8 @@
-/// <reference types="node" />
+/// <reference types="node" resolution-mode="require"/>
 import express from "express";
 import http from "http";
-import { Client } from "./client";
-import { Router } from "./router";
+import { Client } from "./client.js";
+import { Router } from "./router.js";
 export declare type IHandler = (manager: Manager, client: Client, type: string, payload: any, next: () => {}) => void;
 export declare class Manager {
     private readonly _authChannelAdd;
